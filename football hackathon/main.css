@@ -1,0 +1,59 @@
+body {
+    background-color: #2c2c2c;
+    font-family: sans-serif;
+    overflow: hidden; /* Prevents scrollbars from appearing */
+    user-select: none; /* Prevents highlighting text when clicking fast */
+}
+
+/* Main container for the game area */
+.game-container {
+    position: relative; /* Establishes a coordinate system for children */
+    width: 640px;
+    height: 480px;
+    margin: 40px auto; /* Centers the container on the page */
+    border: 3px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Common style for all images inside the container */
+.game-container > img {
+    position: absolute;
+}
+
+#goal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Places the goal image at the very back */
+}
+
+#goalKeeper1 {
+    top: 180px;
+    height: 200px;
+    z-index: 3; /* Keepers are in front of the goal */
+}
+
+#goalKeeper2 {
+    top: 230px;
+    height: 200px;
+    z-index: 3;
+}
+
+#footBall {
+    /* Initial position is set by JavaScript */
+    height: 50px;
+    width: 50px;
+    z-index: 4; /* The ball is in front of everything */
+    cursor: pointer;
+}
+
+#kickArea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Covers the bottom portion of the container */
+    z-index: 5; /* On top of everything to catch clicks */
+    cursor: crosshair;
+}
